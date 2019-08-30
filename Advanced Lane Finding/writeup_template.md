@@ -28,7 +28,6 @@ The goals / steps of this project are the following:
 [image7]: ./output_images/radius-of-curvature.JPG "Radius of Curvature"
 [image8]: ./output_images/normal.JPG "Normal"
 [image9]: ./output_images/challenge.JPG "Challenge"
-[image10]: ./output_images/hard-challenge.JPG "Hard Challenge"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -119,13 +118,11 @@ Here is an example of my result on a test image:
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 1. Output: project_video.mp4
-![alt text][image8]
-Here's a [youtube.com](./project_video.mp4)
+[![Watch the video](output_images/normal.JPG )](https://www.youtube.com/watch?v=-qympDUjrd0)
+
 2. Output: challenge_video.mp4
-![alt text][image9]
-https://www.youtube.com/watch?v=(./project_video.mp4)
-3. Output: harder_challenge_video.mp4
-![alt text][image10]
+[![Watch the video](output_images/challenge.JPG )](https://www.youtube.com/watch?v=NQJB97lcamg)
+
 ### Discussion
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
