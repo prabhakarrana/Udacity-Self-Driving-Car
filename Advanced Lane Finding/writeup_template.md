@@ -27,7 +27,7 @@ The goals / steps of this project are the following:
 [image6]: ./output_images/lanearea.JPG "Lane Area"
 [image7]: ./output_images/radius-of-curvature.JPG "Radius of Curvature"
 [image8]: ./output_images/normal.JPG "Normal"
-[image9]: ./output_images/challenge.JPG "Challenge"
+[image9]: ./output_images/linefit.JPG "Line Fitting"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -99,9 +99,14 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+The code snippet is at 30th code cell of P4_Advance_Lane_Finding.ipynb and function is named Fitting Shaded Lines().
 
-![alt text][image5]
+Starting with the combined binary image to isolate only the pixels belonging to lane lines, I fit the polynomial to each lane line, as follows:
+1. Identified peaks in a histogram of the image to determine location of lane lines.
+2. Identified all non-zero pixels around histogram peaks using the numpy function numpy.nonzero().
+3. Fitted polynomial to each lane using the numpy's fn. numpy.polyfit().
+
+![alt text][image9]
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
