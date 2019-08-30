@@ -24,7 +24,11 @@ The goals / steps of this project are the following:
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image6]: ./output_images/lanearea.JPG "Lane Area"
+[image7]: ./output_images/radius-of-curvature.JPG "Radius of Curvature"
+[image8]: ./output_images/normal.JPG "Normal"
+[image9]: ./output_images/challenge.JPG "Challenge"
+[image10]: ./output_images/hard-challenge.JPG "Hard Challenge"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -102,26 +106,34 @@ Then I did some other stuff and fit my lane lines with a 2nd order polynomial ki
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+The code is in 30th code cell of Advanced Lane Finding.ipynb and function is named def roc_in_meters.
+here is the snippet
+![alt text][image7]
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
-
+Here is an example of my result on a test image:
 ![alt text][image6]
-
----
 
 ### Pipeline (video)
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
-
-Here's a [link to my video result](./project_video.mp4)
-
----
-
+1. Output: project_video.mp4
+![alt text][image8]
+Here's a [youtube.com](./project_video.mp4)
+2. Output: challenge_video.mp4
+![alt text][image9]
+https://www.youtube.com/watch?v=(./project_video.mp4)
+3. Output: harder_challenge_video.mp4
+![alt text][image10]
 ### Discussion
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Pipeline that I have developed is doing a fairly good job in detecting the lane for given car by taking proper center of it. So far code is running good for ideal conditions where lane lines are well defined.
+
+Above code shows decent result on challenge_result.mp4 video but there are few misses in lane lines.
+
+Code didn't do well on the harder_challenge_video.mp4. Errors coming were like.
+
+I think possible way of making it more robust require lot of image processing job to remove noises and extract only those patterns or lane line which are required.
