@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
+[image2]: ./output_images/undistort.PNG "Undistort Image"
 [image3]: ./output_images/threshold.PNG "Combined Threshold"
 [image4]: ./output_images/perspective.PNG "Perspective Transform"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
@@ -58,7 +58,11 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 #### 1. Provide an example of a distortion-corrected image.
 
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+Applied a distortion correction to raw images placed in folder test_images.
+
+Input : calculated camera calibration matrix and distortion coefficients to remove distortion from an image, and
+
+Output : the undistorted image.
 ![alt text][image2]
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
@@ -70,14 +74,14 @@ Converted the warped image to different color spaces and created binary threshol
 Following color channels were used:
 
 1. 'S' Channel from HLS color space, with a minimum threshold = 180 & max threshold = 255
-    Good: Identifies the white and yellow lane lines,
-    Bad: Did not pick up 100% of the pixels in either one with the tendency to get distracted by shadows on the road.
+    * Good: Identifies the white and yellow lane lines,
+    * Bad: Did not pick up 100% of the pixels in either one with the tendency to get distracted by shadows on the road.
 2. 'L' Channel from LUV color space, with a min threshold = 225 & max threshold = 255,
-    Good: Picks up almost all the white lane lines, but
-    Bad: completely ignores the yellow lines.
+    * Good: Picks up almost all the white lane lines, but
+    * Bad: completely ignores the yellow lines.
 3. 'B' channel from the LAB color space, with a min threshold = 155 & max threshold = 200,
-    Good : Identifies the yellow lines much better than S channel, but
-    Bad: Completely ignores the white lines.
+    * Good : Identifies the yellow lines much better than S channel, but
+    * Bad: Completely ignores the white lines.
 Created a combined binary threshold based on the above three mentioned binary thresholds.
 
 Here's an example of my output for this step.
