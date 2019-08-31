@@ -21,8 +21,8 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/undistort_output.png "Undistorted"
 [image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
+[image3]: ./output_images/threshold.PNG "Combined Threshold"
+[image4]: ./output_images/perspective.PNG "Perspective Transform"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./output_images/lanearea.JPG "Lane Area"
 [image7]: ./output_images/radius-of-curvature.JPG "Radius of Curvature"
@@ -63,39 +63,51 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of color and gradient thresholds to generate a binary image in P4_Advance_Lane_Finding.ipynb.
+
+Converted the warped image to different color spaces and created binary thresholded images which highlight only lane lines and ignore everything else.
+
+Following color channels were used:
+
+'S' Channel from HLS color space, with a minimum threshold = 180 & max threshold = 255
+Good: Identifies the white and yellow lane lines,
+Bad: Did not pick up 100% of the pixels in either one with the tendency to get distracted by shadows on the road.
+'L' Channel from LUV color space, with a min threshold = 225 & max threshold = 255,
+Good: Picks up almost all the white lane lines, but
+Bad: completely ignores the yellow lines.
+'B' channel from the LAB color space, with a min threshold = 155 & max threshold = 200,
+Good : Identifies the yellow lines much better than S channel, but
+Bad: Completely ignores the white lines.
+Created a combined binary threshold based on the above three mentioned binary thresholds.
+
+Here's an example of my output for this step.
+
 
 ![alt text][image3]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+The code for my perspective transform is in 39th code cell in P4_Advance_Lane_Finding.ipynb, which includes a function called transform_perspective() It takes as inputs an image (img) and hardcodes the source (src) and destination (dst) points.
 
-```python
-src = np.float32(
-    [[(img_size[0] / 2) - 55, img_size[1] / 2 + 100],
-    [((img_size[0] / 6) - 10), img_size[1]],
-    [(img_size[0] * 5 / 6) + 60, img_size[1]],
-    [(img_size[0] / 2 + 55), img_size[1] / 2 + 100]])
-dst = np.float32(
-    [[(img_size[0] / 4), 0],
-    [(img_size[0] / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), 0]])
-```
+It uses the CV2's getPerspectiveTransform() and warpPerspective() functiions.
 
-This resulted in the following source and destination points:
+I chose the hardcode the source and destination points in the following manner:
 
-| Source        | Destination   | 
-|:-------------:|:-------------:| 
-| 585, 460      | 320, 0        | 
-| 203, 720      | 320, 720      |
-| 1127, 720     | 960, 720      |
-| 695, 460      | 960, 0        |
-
-I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+    src = np.array([[(width*0.4, height*0.65),
+                        (width*0.6, height*0.65),
+                        (width, height),
+                        (0, height)]], 
+                        dtype=np.float32)
+    dst = np.array([[0,0], 
+                    [img.shape[1], 0], 
+                    [img.shape[1], img.shape[0]],
+                    [0, img.shape[0]]],
+                    dtype = 'float32')
+                    
+I verified that my perspective transform was working as expected by drawing the src and dst points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 ![alt text][image4]
+
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
@@ -134,8 +146,8 @@ Here is an example of my result on a test image:
 
 Pipeline that I have developed is doing a fairly good job in detecting the lane for given car by taking proper center of it. So far code is running good for ideal conditions where lane lines are well defined.
 
-Above code shows decent result on challenge_result.mp4 video but there are few misses in lane lines.
+Above code shows decent result on challenge_result.mp4 video but there are few misses in lane lines specially near shadowed areas.
 
-Code didn't do well on the harder_challenge_video.mp4. Errors coming were like.
+Code didn't do well on the harder_challenge_video.mp4. Errors coming were like not able to track the path at all.
 
 I think possible way of making it more robust require lot of image processing job to remove noises and extract only those patterns or lane line which are required.
