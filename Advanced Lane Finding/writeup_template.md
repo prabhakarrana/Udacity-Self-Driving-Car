@@ -69,15 +69,15 @@ Converted the warped image to different color spaces and created binary threshol
 
 Following color channels were used:
 
-'S' Channel from HLS color space, with a minimum threshold = 180 & max threshold = 255
-Good: Identifies the white and yellow lane lines,
-Bad: Did not pick up 100% of the pixels in either one with the tendency to get distracted by shadows on the road.
-'L' Channel from LUV color space, with a min threshold = 225 & max threshold = 255,
-Good: Picks up almost all the white lane lines, but
-Bad: completely ignores the yellow lines.
-'B' channel from the LAB color space, with a min threshold = 155 & max threshold = 200,
-Good : Identifies the yellow lines much better than S channel, but
-Bad: Completely ignores the white lines.
+1. 'S' Channel from HLS color space, with a minimum threshold = 180 & max threshold = 255
+    Good: Identifies the white and yellow lane lines,
+    Bad: Did not pick up 100% of the pixels in either one with the tendency to get distracted by shadows on the road.
+2. 'L' Channel from LUV color space, with a min threshold = 225 & max threshold = 255,
+    Good: Picks up almost all the white lane lines, but
+    Bad: completely ignores the yellow lines.
+3. 'B' channel from the LAB color space, with a min threshold = 155 & max threshold = 200,
+    Good : Identifies the yellow lines much better than S channel, but
+    Bad: Completely ignores the white lines.
 Created a combined binary threshold based on the above three mentioned binary thresholds.
 
 Here's an example of my output for this step.
