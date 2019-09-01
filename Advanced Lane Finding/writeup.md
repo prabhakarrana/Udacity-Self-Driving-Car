@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [image4]: ./output_images/perspective.PNG "Perspective Transform"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./output_images/lanearea.JPG "Lane Area"
-[image7]: ./output_images/radius-of-curvature.JPG "Radius of Curvature"
+[image7]: ./output_images/roc.JPG "Radius of Curvature"
 [image8]: ./output_images/normal.JPG "Normal"
 [image9]: ./output_images/linefit.JPG "Line Fitting"
 [video1]: ./project_video.mp4 "Video"
