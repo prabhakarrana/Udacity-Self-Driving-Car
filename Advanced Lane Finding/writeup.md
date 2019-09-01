@@ -77,7 +77,7 @@ Here's an example of my output for this step.
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform is in 39th code cell in P4_Advance_Lane_Finding.ipynb, which includes a function called transform_perspective() It takes as inputs an image (img) and hardcodes the source (src) and destination (dst) points.
+The code for my perspective transform is in P4_Advance_Lane_Finding.ipynb, which includes a function called transform_perspective() It takes as inputs an image (img) and hardcodes the source (src) and destination (dst) points.
 
 It uses the CV2's getPerspectiveTransform() and warpPerspective() functiions.
 
@@ -101,7 +101,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-The code snippet is at 30th code cell of P4_Advance_Lane_Finding.ipynb and function is named Fitting Shaded Lines().
+The code snippet is P4_Advance_Lane_Finding.ipynb and function is named Fitting Shaded Lines().
 
 Starting with the combined binary image to isolate only the pixels belonging to lane lines, I fit the polynomial to each lane line, as follows:
 1. Identified peaks in a histogram of the image to determine location of lane lines.
@@ -112,7 +112,7 @@ Starting with the combined binary image to isolate only the pixels belonging to 
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-The code is in 30th code cell of Advanced Lane Finding.ipynb and function is named def roc_in_meters.
+The code is in Advanced Lane Finding.ipynb and function is named def roc_in_meters.
 here is the snippet
 ![alt text][image7]
 
