@@ -18,9 +18,9 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
+[image2]: ./examples/classes.png "Class Samples"
+[image3]: ./examples/distribution.png "Class Distribution"
+[image4]: ./examples/translation.png "Image Transformation"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
@@ -43,32 +43,31 @@ Image data shape = (32, 32, 3)
 Number of classes = 43
 
 #### 2. Include an exploratory visualization of the dataset.
-
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
-
-![alt text][image1]
+Here is an exploratory visualization of the data set. 
+![alt text][image2]
+Here is the distribution of the data set. It is a bar chart showing how many dataset in each classes and clearly indicates that dataset is unbalanced.
+![alt text][image3]
 
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+* Intital step was to upsample the dataset as for few classes images are very less as compared to other. Hence model will be biased towards class which having more dataset. To avoid that we need to upsample classes with low values.
+* Possible way was to upsample random images and make various duplicates of it in each class. But again that technique create various duplicates. To avoid that random samples are chosen from each class and they are transformed by varierty of parameters like angular rotation,translation,crop,zoom. Transform_image function was used to implement this.
+* Then all images are converted into grayscale because we are expecting network to detect traffic sign by geometry and shape and not by color.
+* At last step, I all images are normalized with zero mean and equal variance as it helps optimizers to find optimum solution.
+Here is an example of the whole process.i.e.image data comes in 0 to 255 pixle value, to normalize it I have used (X-Xmean)/std.
 
-As a first step, I decided to convert the images to grayscale because ...
+![alt text][image4]
 
-Here is an example of a traffic sign image before and after grayscaling.
+**Existing data
 
-![alt text][image2]
+Number of training examples = 34799
+Number of Validation examples = 4410
+Number of testing examples = 12630
+**Data after Augmentation
 
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+Number of training examples after image augment = 86430
+Number of testing examples after image augment = 12630
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
