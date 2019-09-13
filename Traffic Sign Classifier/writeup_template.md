@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 [image3]: ./examples/distribution.png "Class Distribution"
 [image4]: ./examples/translation.png "Image Transformation"
 [image5]: ./examples/epcoh.png "accuracy over epoch"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
+[image6]: ./examples/random.png "Random Images"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
@@ -149,8 +149,7 @@ In order to avoid overfitting data we have introduced dropout at various convolu
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image6]
 
 The first image might be difficult to classify because ...
 
@@ -160,12 +159,13 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
-
+| Speed Limit(30km/h)     		| Speed Limit(30km/h)   									| 
+| Priority Road     			| Priority Road  										|
+| Keep Right					| Keep Right											|
+| Turn Left Ahead	      		| Bumpy Road					 				|
+| General Caution			| General Caution      							|
+| Road work			|  Road work      							|
+| Stop			| Stop     							|
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
