@@ -36,11 +36,11 @@ You're reading it! and here is a link to my [project code](https://github.com/ud
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-Number of training examples = 34799
-Number of Validation examples = 4410
-Number of testing examples = 12630
-Image data shape = (32, 32, 3)
-Number of classes = 43
+* Number of training examples = 34799
+* Number of Validation examples = 4410
+* Number of testing examples = 12630
+* Image data shape = (32, 32, 3)
+* Number of classes = 43
 
 #### 2. Include an exploratory visualization of the dataset.
 Here is an exploratory visualization of the data set. 
@@ -61,32 +61,45 @@ Here is an example of the whole process.i.e.image data comes in 0 to 255 pixle v
 
 **Existing data
 
-Number of training examples = 34799
-Number of Validation examples = 4410
-Number of testing examples = 12630
+* Number of training examples = 34799
+* Number of Validation examples = 4410
+* Number of testing examples = 12630
+
 **Data after Augmentation
 
-Number of training examples after image augment = 86430
-Number of testing examples after image augment = 12630
+* Number of training examples after image augument = 86430
+* Number of testing examples after image augument = 12630
+* Number of training labels after image augument = 86430
+* Number of testing labels after image augument = 12630
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
+#### Input	32x32x1 Grayscale image
+#### Convolutional #1 outputs 28x28x6
+* 5x5 Filter and  1x1 stride
+* Activation any activation function, we will relu
+* Max pooling	2x2 stride, The output shape should be 14x14x6.
+* Dropout	Keep probability = 0.7
+* Input Depth of 1 and output Depth of 6
 
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+##### Convolutional #2 outputs 10x10x16.
+* 5x5 Filter and  1x1 stride
+* Activation any activation function, we will relu
+* Max pooling	2x2 stride, The output shape should be 5x5x16
+* Dropout	Keep probability = 0.7
+* Input Depth of 6 and output Depth of 16
+
+##### Flatten Flatten the output shape of the final pooling layer
+* Fully Connected #1 outputs 120
+
+##### Activation any activation function, we will relu
+* Fully Connected #2 outputs 84
+
+##### Activation any activation function, we will relu
+* Fully Connected (Logits) #3 output 10
  
-
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
