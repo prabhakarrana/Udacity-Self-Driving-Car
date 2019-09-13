@@ -21,7 +21,7 @@ The goals / steps of this project are the following:
 [image2]: ./examples/classes.png "Class Samples"
 [image3]: ./examples/distribution.png "Class Distribution"
 [image4]: ./examples/translation.png "Image Transformation"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
+[image5]: ./examples/epcoh.png "accuracy over epoch"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
@@ -108,24 +108,40 @@ EPOCHS = 70 and BATCH_SIZE = 100 is used for the training purpose.
 Best results observed from   mu = 0 and sigma = 0.1
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+To acehive better validation accuracy I worked out on various hyperparameter like learning rate, epoch's, dropout keep probability and its position in network.
+
+Following parameter were used to yield best result for my network:
+* Learning Rate = 0.0009
+* Epoch = 70
+* batch Size = 100
+* Dropout at FC 0 layer = 0.6
+* Dropout at FC 2 layer = 0.6
+* Dropout at Conv 1 layer = 0.7
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* Train Accuracy = 0.991
+* Valid Accuracy = 0.971
+* Test Accuracy = 0.948
+Below graph shows validation accuracy over number of Epoch's:
+![alt text][image4]
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+ I have used LeNet architecture as suggested in class tutorial without doing much changes.
  
+* What were some problems with the initial architecture?
+While working on LeNet architecture in its stock format I have observed that accuracy of model not increasing as image data was not pre-processed also the model overfitting due to unbalanced datasets and network without dropouts.
+
+* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+
+In order to avoid overfitting data we have introduced dropout at various convolution layer.
+
+
+* Which parameters were tuned? How were they adjusted and why?
+
+* Learning Rate:- Higher Learning rate train model faster but stagnant earlier than acheving its full potential, whereas for lower learning rate model train slower but it achieves lowest possible loss for that model.in my model learning rate of 0.0009 yields better results.
+* Batch Size:- Since we can not train whole model at once due to computation power limitation, so we split model in batches, calculate all parameter for each batches and cascade it to top level for complete model, ats again on model size we can deside batch size, in our model Batch size is 100.
+* Keep Probability:- To avoid overfitting in model we have to introduced dropout at different layer, In our model I have added dropout at Conv1 layer, at first fully connected layer, and at last fully connected layer but with different keep probability, like at earlier layer it is higher 0.7 in our case and at later layer it is 0.6.
 
 ### Test a Model on New Images
 
