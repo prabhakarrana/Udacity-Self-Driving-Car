@@ -98,12 +98,14 @@ My final model consisted of the following layers:
 * Fully Connected #2 outputs 84
 
 ##### Activation any activation function, we will relu
-* Fully Connected (Logits) #3 output 10
+* Fully Connected (Logits) #3 output 43
  
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+To train the model, As discussed in the tutorial i used LeNet Model for implementing this image classification project. On using model in its raw form not giving a good accuracy. In order to increase accuracy Dropout probability and adam optimizer is used.Tried with SGD optimzer also but Adam gives better result.
+EPOCHS = 70 and BATCH_SIZE = 100 is used for the training purpose.
+Best results observed from   mu = 0 and sigma = 0.1
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
