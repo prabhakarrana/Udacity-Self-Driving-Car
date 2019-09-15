@@ -21,7 +21,7 @@ The goals / steps of this project are the following:
 [image2]: ./examples/classes.png "Class Samples"
 [image3]: ./examples/distribution.png "Class Distribution"
 [image4]: ./examples/translation.png "Image Transformation"
-[image5]: ./examples/epcoh.png "accuracy over epoch"
+[image5]: ./examples/epoch.png "accuracy over epoch"
 [image6]: ./examples/random.png "Random Images"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
@@ -121,9 +121,9 @@ Following parameter were used to yield best result for my network:
 My final model results were:
 * Train Accuracy = 0.991
 * Valid Accuracy = 0.971
-* Test Accuracy = 0.948
+* Test Accuracy = 0.948  
 Below graph shows validation accuracy over number of Epoch's:
-![alt text][image4]
+![alt text][image5]
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
