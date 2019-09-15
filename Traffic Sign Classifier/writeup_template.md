@@ -162,7 +162,7 @@ Here are the results of the prediction:
 | Speed Limit(30km/h)     		| Speed Limit(30km/h)   									| 
 | Priority Road     			| Priority Road  										|
 | Keep Right					| Keep Right											|
-| Turn Left Ahead	      		| Bumpy Road					 				|
+| Turn Left Ahead	      		| Turn Left Ahead					 				|
 | General Caution			| General Caution      							|
 | Road work			|  Road work      							|
 | Stop			| Stop     							|
@@ -177,14 +177,14 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1     		| Speed Limit(30km/h)   									| 
+| 1    			| Priority Road  										|
+| 1					| Keep Right											|
+| 1      		| Turn Left Ahead					 				|
+| 1			| General Caution      							|
+| 1			|  Road work      							|
+| 1			| Stop     							|
 
-
-For the second image ... 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
