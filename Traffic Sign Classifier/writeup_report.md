@@ -1,7 +1,4 @@
 # **Traffic Sign Recognition** 
-
-## Writeup
-
 ---
 [//]: # (Image References)
 
