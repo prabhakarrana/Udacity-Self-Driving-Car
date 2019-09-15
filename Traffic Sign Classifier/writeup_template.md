@@ -126,18 +126,18 @@ Below graph shows validation accuracy over number of Epoch's:
 ![alt text][image5]
 
 If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
+#### What was the first architecture that was tried and why was it chosen?
  I have used LeNet architecture as suggested in class tutorial without doing much changes.
  
-* What were some problems with the initial architecture?
+#### What were some problems with the initial architecture?
 While working on LeNet architecture in its stock format I have observed that accuracy of model not increasing as image data was not pre-processed also the model overfitting due to unbalanced datasets and network without dropouts.
 
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+#### How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 
-In order to avoid overfitting data we have introduced dropout at various convolution layer.
+In order to avoid overfitting data we have introduced dropout at various convolution layer. Dropout probability of 30% for first convolutional layer and Dropout probability of 40% at each fully connected layer were introduced to avoid overfitting.
 
 
-* Which parameters were tuned? How were they adjusted and why?
+#### Which parameters were tuned? How were they adjusted and why?
 
 * Learning Rate:- Higher Learning rate train model faster but stagnant earlier than acheving its full potential, whereas for lower learning rate model train slower but it achieves lowest possible loss for that model.in my model learning rate of 0.0009 yields better results.
 * Batch Size:- Since we can not train whole model at once due to computation power limitation, so we split model in batches, calculate all parameter for each batches and cascade it to top level for complete model, ats again on model size we can deside batch size, in our model Batch size is 100.
@@ -167,7 +167,7 @@ Here are the results of the prediction:
 | Road work			|  Road work      							|
 | Stop			| Stop     							|
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess all 5 traffic signs, which gives an accuracy of 100%. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
