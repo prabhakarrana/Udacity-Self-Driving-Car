@@ -7,7 +7,7 @@
 [image3]: ./examples/distribution.png "Class Distribution"
 [image4]: ./examples/translation.png "Image Transformation"
 [image5]: ./examples/epoch.png "accuracy over epoch"
-[image6]: ./examples/random.png "Random Images"
+[image6]: ./examples/club.png "Random Images"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
