@@ -146,30 +146,33 @@ Here are the results of the prediction:
 |:---------------------:|:---------------------------------------------:| 
 | Speed limit (30km/h)     		| Speed Limit(30km/h)   									| 
 | Keep left     			| Keep left 										|
-| Speed limit (80km/h)					| Speed limit (80km/h)											|
+| Speed limit (80km/h)					| Keep right											|
 | Bicycles crossing	      		| Bicycles crossing						 				|
 | Right-of-way at the next intersection			| Right-of-way at the next intersection      							|
 | Stop			| Speed limit (120km/h)      							|
 | Priority road			| Priority road	     							|
 |Turn right ahead | Turn right ahead |
-The model was able to correctly guess all 5 traffic signs, which gives an accuracy of 100%. 
+
+Figure showing Top 3 Probabilities for detected images.
+
+The model was not able to correctly guess  Speed limit (80km/h)	as there are text also available in the image and those text were not available in training image which gives an accuracy of 87.5%.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the third and forth image, the model is not sure about exact class category. Though it identifies correctly for Bicycles crossing but not with 100% accuracy. And for third image model is totally wrong giving only .45% accuracy.
 
 | Probability			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1     		| Speed Limit(30km/h)   									| 
 | 1   			| Keep left 										|
-|.3				| Speed limit (80km/h)											|
-| .53	      		| Bicycles crossing						 				|
+|.45			| Speed limit (80km/h)											|
+| .83	      		| Bicycles crossing						 				|
 | 1			| Right-of-way at the next intersection     							|
-| .92		| Speed limit (120km/h)      							|
+| 1		| Speed limit (120km/h)      							|
 | 1			| Priority road	     							|
-|.92 | Turn right ahead |
+|1 | Turn right ahead |
 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
