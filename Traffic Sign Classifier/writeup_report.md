@@ -42,7 +42,7 @@ Here is the distribution of the data set. It is a bar chart showing how many dat
 * At last step, I all images are normalized with zero mean and equal variance as it helps optimizers to find optimum solution.
 Here is an example of the whole process.i.e.image data comes in 0 to 255 pixle value, to normalize it I have used (X-Xmean)/std.
 
-![alt text][image4]
+![alt text][image4] 
 
 **Existing data
 
@@ -66,7 +66,7 @@ My final model consisted of the following layers:
 * 5x5 Filter and  1x1 stride
 * Activation any activation function, we will relu
 * Max pooling	2x2 stride, The output shape should be 14x14x6.
-* Dropout	Keep probability = 0.7
+* Dropout	Keep probability = 0.7 
 * Input Depth of 1 and output Depth of 6
 
 ##### Convolutional #2 outputs 10x10x16.
@@ -175,7 +175,7 @@ For the third and forth image, the model is not sure about exact class category.
 |1 | Turn right ahead |
 
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
+###  (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
