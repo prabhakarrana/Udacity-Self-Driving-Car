@@ -66,17 +66,17 @@ I tested the model provided by NVIDIA as discussed in Udacity Student hub. The m
 
 In the end, the model looks like as follows:
 
-Image normalization
-Convolution: 5x5, filter: 24, strides: 2x2, activation: ELU
-Convolution: 5x5, filter: 36, strides: 2x2, activation: ELU
-Convolution: 5x5, filter: 48, strides: 2x2, activation: ELU
-Convolution: 3x3, filter: 64, strides: 1x1, activation: ELU
-Convolution: 3x3, filter: 64, strides: 1x1, activation: ELU
-Drop out (0.25)
-Fully connected: neurons: 100, activation: ELU
-Fully connected: neurons: 50, activation: ELU
-Fully connected: neurons: 10, activation: ELU
-Fully connected: neurons: 1 (output)
+* Image normalization
+* Convolution: 5x5, filter: 24, strides: 2x2, activation: ELU
+* Convolution: 5x5, filter: 36, strides: 2x2, activation: ELU
+* Convolution: 5x5, filter: 48, strides: 2x2, activation: ELU
+* Convolution: 3x3, filter: 64, strides: 1x1, activation: ELU
+* Convolution: 3x3, filter: 64, strides: 1x1, activation: ELU
+* Drop out (0.25)
+* Fully connected: neurons: 100, activation: ELU
+* Fully connected: neurons: 50, activation: ELU
+* Fully connected: neurons: 10, activation: ELU
+* Fully connected: neurons: 1 (output)
 
 As per the NVIDIA model, the convolution layers are meant to handle feature engineering and the fully connected layer for predicting the steering angle. 
 The below is a model summary output from the Keras:
