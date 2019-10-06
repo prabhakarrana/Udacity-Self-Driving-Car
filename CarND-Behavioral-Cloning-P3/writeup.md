@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/placeholder.png "Model Visualization"
+[image1]: ./examples/model.JPG "Model Visualization"
 [image2]: ./examples/placeholder.png "Grayscaling"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
@@ -35,10 +35,13 @@ The goals / steps of this project are the following:
 #### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
-* model.py containing the script to create and train the model
-* drive.py for driving the car in autonomous mode
-* model.h5 containing a trained convolution neural network 
-* writeup_report.md or writeup_report.pdf summarizing the results
+|  Filename   |   Description  | 
+|:-------------:|:-------------:|
+| model.py | define and train the neual network |
+| model.h5 | saved model by keras |
+| drive.py | communicate with simulator and use saved model to predict steering angle  |
+| video.py | converting video from images captured from Simulator  |
+| video.mp4 | track 1 video record |
 
 #### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
@@ -58,6 +61,25 @@ My model consists of a convolution neural network with 3x3 filter sizes and dept
 
 The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
 
+I tested the model provided by NVIDIA as discussed in Udacity Student hub. The model architecture is described [here](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf). As an input this model takes in image of the shape (60,266,3) but our dashboard images/training images are of size (160,320,3). Architecture of the remaining model was same only input dimensions have changed accordingly.
+
+In the end, the model looks like as follows:
+
+Image normalization
+Convolution: 5x5, filter: 24, strides: 2x2, activation: ELU
+Convolution: 5x5, filter: 36, strides: 2x2, activation: ELU
+Convolution: 5x5, filter: 48, strides: 2x2, activation: ELU
+Convolution: 3x3, filter: 64, strides: 1x1, activation: ELU
+Convolution: 3x3, filter: 64, strides: 1x1, activation: ELU
+Drop out (0.25)
+Fully connected: neurons: 100, activation: ELU
+Fully connected: neurons: 50, activation: ELU
+Fully connected: neurons: 10, activation: ELU
+Fully connected: neurons: 1 (output)
+
+As per the NVIDIA model, the convolution layers are meant to handle feature engineering and the fully connected layer for predicting the steering angle. 
+The below is a model summary output from the Keras
+![alt text][image1]
 #### 2. Attempts to reduce overfitting in the model
 
 The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
