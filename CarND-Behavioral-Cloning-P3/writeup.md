@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/model.JPG "Model Visualization"
+[image1]: ./images/model.JPG "Model Visualization"
 [image2]: ./examples/placeholder.png "Grayscaling"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
@@ -35,6 +35,7 @@ The goals / steps of this project are the following:
 #### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
+
 |  Filename   |   Description  | 
 |:-------------:|:-------------:|
 | model.py | define and train the neual network |
@@ -78,8 +79,10 @@ Fully connected: neurons: 10, activation: ELU
 Fully connected: neurons: 1 (output)
 
 As per the NVIDIA model, the convolution layers are meant to handle feature engineering and the fully connected layer for predicting the steering angle. 
-The below is a model summary output from the Keras
+The below is a model summary output from the Keras:
+
 ![alt text][image1]
+
 #### 2. Attempts to reduce overfitting in the model
 
 The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
