@@ -23,20 +23,28 @@ The simulator can be downloaded from the Udacity CarND classroom.
 ### Project Files
 |  Filename   |   Description  | 
 |:-------------:|:-------------:|
-| prepare_data.ipynb |  ipython notebook for data preprocessing and argumentation |
 | model.py | define and train the neual network |
 | model.h5 | saved model by keras |
 | drive.py | communicate with simulator and use saved model to predict steering angle  |
+| video.py | converting video from images captured from Simulator  |
 | video.mp4 | track 1 video record |
 
 ### Usage
+The create model weights and storin them at model.h5 by using this command:
 
+```sh
+python model.py
+```
 The model can be tested by using this command:
 
 ```sh
 python drive.py model.h5
 ```
+The model weights can be tested and store simulator screenshots at directory 'run1' by using this command:
 
+```sh
+python drive.py model.h5 run1
+```
 The above command will load the trained model and use the model to make predictions on individual images in real-time and send the predicted angle back to the server via a websocket connection.
 
  ## Writeup is here --> [Rubric Points](https://github.com/prabhakarrana/Udacity-Self-Driving-Car/blob/master/CarND-Behavioral-Cloning-P3/writeup.md) 
