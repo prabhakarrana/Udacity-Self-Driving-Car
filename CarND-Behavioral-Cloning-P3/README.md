@@ -20,6 +20,15 @@ The lab enviroment can be created with CarND Term1 Starter Kit. Click [here](htt
 
 The simulator can be downloaded from the Udacity CarND classroom.
 
+### Project Files
+|  Filename   |   Description  | 
+|:-------------:|:-------------:|
+| prepare_data.ipynb |  ipython notebook for data preprocessing and argumentation |
+| model.py | define and train the neual network |
+| model.h5 | saved model by keras |
+| drive.py | communicate with simulator and use saved model to predict steering angle  |
+| video.mp4 | track 1 video record |
+
 ### Usage
 
 The model can be tested by using this command:
