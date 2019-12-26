@@ -1,11 +1,11 @@
 [//]: # (Image References)
 
-[code1]: ./img/1.png "Code 1"
-[code2]: ./img/1.png "Code 2"
-[code3]: ./img/1.png "Code 3"
-[code4]: ./img/1.png "Code 4"
-[code5]: ./img/1.png "Code 5"
-[code6]: ./img/1.png "Code 6"
+[code1]: ./img/1.PNG "Code 1"
+[code2]: ./img/1.PNG "Code 2"
+[code3]: ./img/1.PNG "Code 3"
+[code4]: ./img/1.PNG "Code 4"
+[code5]: ./img/1.PNG "Code 5"
+[code6]: ./img/1.PNG "Code 6"
 
 
 # Model Documentation
