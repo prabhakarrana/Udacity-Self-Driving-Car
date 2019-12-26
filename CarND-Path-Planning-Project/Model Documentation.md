@@ -50,9 +50,11 @@ Car changes lane when car in front of it is slower and a relative smooth lane ch
 ![alt text][code1]
 
 4.From sensor fusion data lane position of the other cars are determined (line 104-121) and respective flags are set (ahead,left,right) indicating other car positions using creating a boundary of 30m front and back of our car (line 129-140).
+
 ![alt text][code2]
 
-5. Once we are aware of other car's positions behaviour modelling is done and Code Explaination is below (line 143-173 )
+5. Once we are aware of other car's positions behaviour modelling is done and Code Explaination is below (line 143-173)
+
 ![alt text][code3]   
 
 
@@ -64,10 +66,13 @@ Car changes lane when car in front of it is slower and a relative smooth lane ch
 | Free Lane Ahead | Increase Speed  |Increase speed till Max Speed limit as road is free|
 | Free Lane Ahead | Move back to Middle Lane  |If middle lane is free move to middle lane|
 
-7.The following code snippet shows how we use the spine library to get the next wavepoints(line 214-216 ).
+7.The following code snippet shows how we use the spine library to get the next wavepoints(line 214-216).
+
 ![alt text][code4]
 8.Pushed these points into a vector (line 219-225).
+
 ![alt text][code5]
 9.Filled intermediate paths points using spline and ref_velocity is also increased /decreased as per state conditions with a step of 0.224 line(255-263).
+
 ![alt text][code6]
 
