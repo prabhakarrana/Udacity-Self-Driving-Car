@@ -54,6 +54,8 @@ Car changes lane when car in front of it is slower and a relative smooth lane ch
 
 5. Once we are aware of other car's positions behaviour modelling is done and Code Explaination is below (line 143-173 )
 ![alt text][code3]   
+
+
 | State  |  Action |     Description |
 | ------------- | ------------- |------------- |
 | Car Ahead  | Reduce Speed  | As no path available to reduce speed gradually |
