@@ -46,7 +46,8 @@ Car changes lane when car in front of it is slower and a relative smooth lane ch
 
 1. Obtain current car telemetry, sensor fusion data, and information of the remainder of the previous path.
 2. This implementation uses a spline function to fits a line to given points in a fairly smooth function for a jerk free ride. After fitting a line, then multiple data points are fed along that line (with the distance between them depending on my desired speed) back into the simulator.
-3.In main.cpp to avoid the collision , we would store the car s coordinates to end_path_s value when the previous_path_size is greater than 0 so that we start from the end point for the next iteration thus avoiding any collision (line 99-102 )
+3.In main.cpp to avoid the collision , we would store the car s coordinates to end_path_s value when the previous_path_size is greater than 0 so that we start from the end point for the next iteration thus avoiding any collision (line 99-102).
+
 ![alt text][code1]
 
 4.From sensor fusion data lane position of the other cars are determined (line 104-121) and respective flags are set (ahead,left,right) indicating other car positions using creating a boundary of 30m front and back of our car (line 129-140).
@@ -69,9 +70,11 @@ Car changes lane when car in front of it is slower and a relative smooth lane ch
 7.The following code snippet shows how we use the spine library to get the next wavepoints(line 214-216).
 
 ![alt text][code4]
+
 8.Pushed these points into a vector (line 219-225).
 
 ![alt text][code5]
+
 9.Filled intermediate paths points using spline and ref_velocity is also increased /decreased as per state conditions with a step of 0.224 line(255-263).
 
 ![alt text][code6]
