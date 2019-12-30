@@ -1,6 +1,6 @@
 [//]: # (Image References)
 
-[code1]: ./img/1.PNG "Code 1"
+[code1]: ./IMG/1.PNG "Code 1"
 
 # Model Documentation
 ## PID Controller
