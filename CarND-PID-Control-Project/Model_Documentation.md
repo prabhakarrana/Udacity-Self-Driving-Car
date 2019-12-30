@@ -20,7 +20,10 @@ This parameter controls the accumulating error. Addition of this term reduces th
 This parameter controls the rate of change of error. Addition of this term reduces the oscillary effect in  the system. With derivative control, the control signal can become large if the error begins sloping upward, even while the magnitude of the error is still relatively small. This anticipation tends to add damping to the system, thereby decreasing overshoot.
 
 Final parameters for my controllers are (line 42-43): 
-  
+
+![alt text][code1]
+
+
 |   | Steering  | Speed  |
 |---|---|---|
 | Kp  |  0.13 |  0.1 |
